@@ -34,7 +34,7 @@
         <springframework.security.jwt.version>1.0.8.RELEASE</springframework.security.jwt.version>
         <springframework.security.oauth2.version>2.2.1.RELEASE</springframework.security.oauth2.version>
 	    <springframework.social.version>1.1.4.RELEASE</springframework.social.version>
-	    <springframework.social.facebook.version>3.0.0.M3</springframework.social.facebook.version>
+	    <springframework.social.facebook.version>2.0.3.RELEASE</springframework.social.facebook.version>
 	    <springframework.social.google.version>1.0.0.RELEASE</springframework.social.google.version>
         <jjwt.version>0.9.0</jjwt.version>
         <hibernate.version>5.2.12.Final</hibernate.version>
@@ -187,18 +187,13 @@
             <version>${postgresql.connector.version}</version>
         </dependency>
 
-	<dependency>
-    	    <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.2.5</version>
-        </dependency>
-
         <!--Servlet API-->
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
+            <artifactId>javax.servlet-api</artifactId>
             <version>${servlet-api.version}</version>
             <scope>provided</scope>
+            <optional>true</optional>
         </dependency>
         <!--Jackson-->
         <dependency>
@@ -496,14 +491,6 @@
         <finalName>${project.fileName}</finalName>
         <plugins>
 	        <plugin>
-		        <groupId>org.apache.maven.plugins</groupId>
-		        <artifactId>maven-war-plugin</artifactId>
-		        <configuration>
-			        <failOnMissingWebXml>false</failOnMissingWebXml>
-		        </configuration>
-	        </plugin>
-
-	        <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
@@ -526,6 +513,7 @@
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
+                <version>3.2.0</version>
             </plugin>
 
             <plugin>
